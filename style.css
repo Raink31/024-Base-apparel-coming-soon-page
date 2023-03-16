@@ -1,0 +1,290 @@
+/* RESETS */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    display: block;
+}
+
+/* Style guide roots */
+
+:root{
+    /* Primary */
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    /* Neutral */
+    --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+/* Body & main */
+
+html, body{
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    min-height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-grayish-red);
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+main{
+    max-width: 767.99px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+}
+
+/* Logo */
+
+.logo{
+    margin: 2rem 2rem;
+}
+
+.logo img{
+    width: 70%;
+}
+
+/* Hero */
+
+.hero{
+    width: 100%;
+}
+
+.hero img{
+    width: 100%;
+    object-fit: contain;
+}
+
+/* Text */
+
+.text{
+    margin-top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3.5rem;
+}
+
+/* Header */
+
+h1{
+    width: 60%;
+    text-align: center;
+    font-size: 2.5em;
+    margin: auto;
+    letter-spacing: 8px;
+}
+
+h1 span{
+    font-weight: 300;
+    color: var(--desaturated-red);
+}
+
+h1 strong{
+    font-weight: 600;
+}
+
+/* Paragraph */
+
+p {
+    width: 85%;
+    color: var(--desaturated-red);
+    font-weight: 400;
+    font-size: .9em;
+    text-align: center;
+    margin: auto;
+    margin-top: 1.5rem;
+    line-height: 20px;
+}
+
+/* Email input*/
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    width: 85%;
+    height: 3rem;
+    border: 1px solid var(--desaturated-red);
+    border-radius: 50px;
+}
+
+.error form{
+    border: 2px solid var(--soft-red);
+}
+
+.email-input{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#email{
+    margin-left: 1rem;
+    width: 70%;
+    border: none;
+    background: none;
+    color: var(--dark-grayish-red);
+}
+
+#email::placeholder{
+    color: var(--desaturated-red);
+    opacity: 60%;
+}
+
+#email:focus{
+    outline: none;
+}
+
+.error .error-indicator{
+    position: relative;
+    width: 24px;
+    height: 22px;
+    border-radius: 10px;
+    background-color: var(--soft-red);
+}
+
+.error .error-indicator::after{
+    content: "!";
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 22%;
+    left: 43%;
+}
+
+.error-message{
+    display: none;
+}
+
+.error .error-message{
+    display: block;
+    color: var(--soft-red);
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+/* Arrow submit button */
+
+#submit{
+    margin-left: 1rem;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    width: 25%;
+    transform: translate(10px);
+    height: 110%;
+    border-radius: 50px;
+    box-shadow: 0 10px 15px hsla(0, 36%, 70%, 0.555);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+#submit:hover{
+    height: 125%;
+}
+
+/* Responsive */
+
+@media screen and (min-width: 1100px){
+
+    /* Main */
+
+    main {
+        overflow: hidden;
+        position: relative;
+        max-width: 100vw;
+    }
+
+    main::before {
+        position: absolute;
+        content: "";
+        background: no-repeat url("assets/images/bg-pattern-desktop.svg") left 0;
+        background-size: 100vw 100vh;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+
+    main::after{
+        position: absolute;
+        content: "";
+        background: no-repeat url("assets/images/hero-desktop.jpg") right 0;
+        background-size: 76.3vh;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Logo */
+
+    .logo {
+        margin: 4rem 10rem 0 12rem;
+    }
+
+    .logo img {
+        width: 10vw;
+    }
+
+    /* Hero */
+
+    .hero {
+        width: 0;
+        display: none;
+    }
+
+    /* Text */
+
+    .text {
+        z-index: 1;
+        margin: 5rem 10rem 0 12rem;
+        width: 40%;
+        align-items: flex-start;
+    }
+
+    /* Header */
+
+    h1 {
+        text-align: left;
+        font-size: 4vw;
+        margin: 0;
+    }
+
+    /* Paragraph */
+
+    p {
+        width: 75%;
+        font-size: 1.1vw;
+        text-align: left;
+        margin: 0;
+        margin-top: 1.5rem;
+        line-height: 26px;
+    }
+
+    /* Email input*/
+
+    form {
+        margin-top: 3rem;
+        width: 75%;
+    }
+}
