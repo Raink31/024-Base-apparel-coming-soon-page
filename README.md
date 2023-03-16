@@ -19,7 +19,7 @@ Your challenge is to build out this page and get it looking as close to the desi
 
 ## Links
 
-- Solution URL: --
+- Solution URL: https://www.frontendmentor.io/solutions/responsive-base-apparel-coming-soon-landing-page-lxQXcJkXvY
 - Live Site URL: https://raink31.github.io/024-Base-apparel-coming-soon-page/
 
 
